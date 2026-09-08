@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- G1: modern monarch, symmetric, real anatomy simplified -->
+  <defs>
+    <g id="halfwing">
+      <!-- forewing -->
+      <path d="M193 178
+               C 172 134 140 88 106 70
+               C 86 60 74 70 78 88
+               C 86 118 108 148 134 166
+               C 154 180 176 186 194 190 Z"
+            fill="#E84880" stroke="#231F20" stroke-width="9" stroke-linejoin="round"/>
+      <!-- hindwing -->
+      <path d="M194 198
+               C 168 198 136 208 116 228
+               C 100 244 102 264 116 274
+               Q 128 282 140 274
+               Q 146 284 160 280
+               Q 172 292 184 278
+               C 192 262 196 230 196 206 Z"
+            fill="#E84880" stroke="#231F20" stroke-width="9" stroke-linejoin="round"/>
+      <!-- forewing veins -->
+      <path d="M191 184 L 106 76 M191 186 L 120 122 M192 188 L 142 158" stroke="#231F20" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <!-- hindwing veins -->
+      <path d="M193 203 L 124 236 M193 205 L 146 262 M194 207 L 172 270" stroke="#231F20" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <!-- white spots on borders -->
+      <g fill="#FFFFFF">
+        <circle cx="97" cy="72" r="3.2"/>
+        <circle cx="80" cy="90" r="2.6"/>
+        <circle cx="106" cy="132" r="2.6"/>
+        <circle cx="108" cy="238" r="3"/>
+        <circle cx="123" cy="272" r="2.6"/>
+        <circle cx="155" cy="281" r="2.6"/>
+      </g>
+    </g>
+  </defs>
+  <g transform="rotate(-12 200 200)"><use href="#halfwing" transform="rotate(6 200 200) scale(0.97) translate(6,8)"/>
+  <use href="#halfwing" transform="translate(400,0) scale(-1,1)"/>
+  <!-- body -->
+  <ellipse cx="200" cy="222" rx="7" ry="30" fill="#231F20"/>
+  <circle cx="200" cy="184" r="10" fill="#231F20"/>
+  <circle cx="200" cy="166" r="7" fill="#231F20"/>
+  <path d="M197 160 C 192 144 186 130 178 118 M203 160 C 208 144 214 130 222 118" fill="none" stroke="#231F20" stroke-width="4.5" stroke-linecap="round"/>
+  <circle cx="177" cy="115" r="3.4" fill="#231F20"/>
+  <circle cx="223" cy="115" r="3.4" fill="#231F20"/>
+</g>
+</svg>

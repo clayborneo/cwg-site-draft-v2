@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- D3: butterfly of flowing streamer loops, tails sweeping outward -->
+  <path d="M190 210 C 130 186 84 138 100 100 C 114 68 168 82 186 132 C 193 152 194 184 190 210 Z
+           M178 186 C 148 168 126 140 134 120 C 142 100 168 112 176 144 C 179 158 180 172 178 186 Z" fill="#E84880" fill-rule="evenodd"/>
+  <path d="M210 210 C 270 186 316 138 300 100 C 286 68 232 82 214 132 C 207 152 206 184 210 210 Z
+           M222 186 C 252 168 274 140 266 120 C 258 100 232 112 224 144 C 221 158 220 172 222 186 Z" fill="#F062A0" fill-rule="evenodd"/>
+  <path d="M191 224 C 158 244 130 274 126 302 C 123 326 146 330 160 312 C 176 292 187 258 191 224 Z" fill="#F6A8C8"/>
+  <path d="M209 224 C 242 244 270 274 274 302 C 277 326 254 330 240 312 C 224 292 213 258 209 224 Z" fill="#F6A8C8"/>
+  <ellipse cx="200" cy="214" rx="9" ry="32" fill="#243A5E"/>
+  <path d="M195 186 C 187 170 174 160 160 156 M205 186 C 213 170 226 160 240 156" fill="none" stroke="#243A5E" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

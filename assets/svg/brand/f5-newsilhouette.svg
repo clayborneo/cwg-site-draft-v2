@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- D5: fresh one-color silhouette, 3/4 flying pose -->
+  <path d="M198 214
+           C 224 150 278 84 334 64 C 362 54 372 76 354 96 C 314 140 250 192 198 214 Z" fill="#E84880"/>
+  <path d="M202 222
+           C 246 240 292 280 300 316 C 305 340 284 348 266 332 C 236 304 214 262 202 222 Z" fill="#E84880"/>
+  <path d="M202 210
+           C 164 168 118 140 76 136 C 48 134 44 158 66 172 C 108 198 162 212 202 210 Z" fill="#F062A0"/>
+  <path d="M200 218
+           C 164 238 136 272 132 300 C 129 322 150 328 164 312 C 184 290 196 250 200 218 Z" fill="#F062A0"/>
+  <ellipse cx="203" cy="216" rx="11" ry="36" transform="rotate(20 203 216)" fill="#243A5E"/>
+  <circle cx="215" cy="184" r="9" fill="#243A5E"/>
+  <path d="M212 176 C 204 160 192 150 178 146 M220 176 C 222 158 218 142 210 130" fill="none" stroke="#243A5E" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,11 @@
+# Source assets downloaded from Drive — keep local only
+assets/Website/
+assets/website-drive.zip
+*.zip
+
+# macOS
+.DS_Store
+
+# Editors
+.vscode/
+.idea/

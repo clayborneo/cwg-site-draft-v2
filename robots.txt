@@ -1,0 +1,6 @@
+# Draft site: keep out of search indexes until launch.
+# At launch: change to 'Allow: /' and point Sitemap at the production domain.
+User-agent: *
+Disallow: /
+
+Sitemap: https://clayborneo.github.io/cwg-site-draft-v2/sitemap.xml

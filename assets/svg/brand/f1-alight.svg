@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- D1: perched butterfly profile, full brush-formed wings -->
+  <path d="M196 300
+           C 190 230 206 140 252 84
+           C 282 48 318 62 306 104
+           C 290 160 244 240 214 302
+           C 208 310 199 309 196 300 Z" fill="#E84880"/>
+  <path d="M202 296
+           C 230 264 274 234 310 228
+           C 336 222 342 244 324 260
+           C 292 286 248 302 222 312
+           C 212 315 203 311 206 304 Z" fill="#F6A8C8"/>
+  <path d="M198 306 C 195 318 193 330 194 342 C 200 331 205 318 207 307 C 204 302 200 302 198 306 Z" fill="#243A5E"/>
+  <circle cx="192" cy="298" r="8" fill="#243A5E"/>
+  <path d="M188 292 C 176 278 160 270 144 268 M193 290 C 188 272 178 258 166 250" fill="none" stroke="#243A5E" stroke-width="4.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- D4: butterfly of dots, tilted in flight with a sparkle trail -->
+  <g transform="rotate(-12 200 210)">
+    <g fill="#E84880">
+      <circle cx="146" cy="138" r="36"/>
+      <circle cx="254" cy="138" r="36"/>
+    </g>
+    <g fill="#F062A0">
+      <circle cx="102" cy="180" r="21"/>
+      <circle cx="298" cy="180" r="21"/>
+      <circle cx="170" cy="192" r="16"/>
+      <circle cx="230" cy="192" r="16"/>
+    </g>
+    <g fill="#F6A8C8">
+      <circle cx="146" cy="236" r="18"/>
+      <circle cx="254" cy="236" r="18"/>
+      <circle cx="98" cy="132" r="10"/>
+      <circle cx="302" cy="132" r="10"/>
+    </g>
+    <g fill="#F9C9DC">
+      <circle cx="182" cy="250" r="8"/>
+      <circle cx="218" cy="250" r="8"/>
+    </g>
+    <path d="M200 118 C 195 158 195 236 200 274 C 205 236 205 158 200 118 Z" fill="#243A5E"/>
+    <path d="M197 120 C 189 102 176 90 162 84 M203 120 C 211 102 224 90 238 84" fill="none" stroke="#243A5E" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+  <g fill="#F6A8C8">
+    <circle cx="110" cy="330" r="7"/>
+    <circle cx="86" cy="352" r="5"/>
+    <circle cx="132" cy="352" r="4"/>
+  </g>
+</svg>

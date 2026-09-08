@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- D2: stained-glass butterfly, curved wings with facet bands -->
+  <defs>
+    <clipPath id="lw"><path d="M192 216 C 148 208 84 176 62 124 C 48 90 72 64 108 76 C 156 92 184 160 192 216 Z"/></clipPath>
+    <clipPath id="rw"><path d="M208 216 C 252 208 316 176 338 124 C 352 90 328 64 292 76 C 244 92 216 160 208 216 Z"/></clipPath>
+    <clipPath id="lh"><path d="M193 232 C 160 250 118 284 112 318 C 108 344 132 352 152 336 C 178 314 190 268 193 232 Z"/></clipPath>
+    <clipPath id="rh"><path d="M207 232 C 240 250 282 284 288 318 C 292 344 268 352 248 336 C 222 314 210 268 207 232 Z"/></clipPath>
+  </defs>
+  <g transform="rotate(-6 200 210)">
+    <g clip-path="url(#lw)">
+      <rect x="40" y="50" width="160" height="180" fill="#F6A8C8"/>
+      <polygon stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="192,216 60,150 108,66" fill="#F062A0"/>
+      <polygon stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="192,216 120,70 200,120" fill="#E84880"/>
+    </g>
+    <g clip-path="url(#rw)">
+      <rect x="200" y="50" width="160" height="180" fill="#F6A8C8"/>
+      <polygon stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="208,216 340,150 292,66" fill="#F062A0"/>
+      <polygon stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="208,216 280,70 200,120" fill="#E84880"/>
+    </g>
+    <g clip-path="url(#lh)">
+      <rect x="100" y="228" width="100" height="130" fill="#F6A8C8"/>
+      <polygon stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="193,232 108,330 190,300" fill="#F062A0"/>
+    </g>
+    <g clip-path="url(#rh)">
+      <rect x="200" y="228" width="100" height="130" fill="#F6A8C8"/>
+      <polygon stroke="#FFFFFF" stroke-width="4" stroke-linejoin="round" points="207,232 292,330 210,300" fill="#F062A0"/>
+    </g>
+    <ellipse cx="200" cy="222" rx="9" ry="36" fill="#243A5E"/>
+    <path d="M195 192 C 186 176 172 166 158 162 M205 192 C 214 176 228 166 242 162" fill="none" stroke="#243A5E" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

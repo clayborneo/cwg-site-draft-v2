@@ -1,0 +1,8 @@
+name = "cwg-contact-form"
+main = "worker.js"
+compatibility_date = "2026-08-01"
+
+[vars]
+TO_EMAIL = "melissa@caringwithgrace.com"
+FROM_EMAIL = "website@caringwithgrace.com"
+ALLOWED_ORIGINS = "https://clayborneo.github.io,https://www.caringwithgrace.com,https://caringwithgrace.com"

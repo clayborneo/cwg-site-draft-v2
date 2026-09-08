@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Provisional CwG badge in the Karen pitch-deck style: plum disc, gold
+       crescent, CwG initials (with -> w per thread). Swap for Karen's approved
+       badge mockup when the image.png attachment is saved locally. -->
+  <circle cx="32" cy="32" r="31" fill="#5E2D5E"/>
+  <path d="M 12 49 A 26 26 0 1 1 55 40" fill="none" stroke="#C7A65A" stroke-width="2.4" stroke-linecap="round"/>
+  <text x="31" y="40" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="25" fill="#F6F4EF">C<tspan font-size="15" font-style="italic" fill="#B48AB7" dy="1">w</tspan><tspan dy="-1">G</tspan></text>
+</svg>
