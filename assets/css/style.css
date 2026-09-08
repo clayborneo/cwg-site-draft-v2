@@ -1196,23 +1196,41 @@ section { padding: var(--section-pad) 32px; }
   .site-nav.open .has-dropdown { padding-bottom: 4px; }
 }
 
-/* --- Hero ivory panel (slide 1 lockup) --- */
-.hero-panel {
-  background: rgba(246,244,239,0.96);
-  border-radius: 18px;
-  padding: 38px 42px 34px;
-  max-width: 560px;
-  box-shadow: 0 24px 54px rgba(20,28,40,0.35);
+/* --- Light hero slide (slide 1: lockup on an ivory sweep, no card) --- */
+.carousel-slide.light .carousel-overlay {
+  background: linear-gradient(100deg,
+    rgba(246,244,239,0.97) 0%,
+    rgba(246,244,239,0.92) 34%,
+    rgba(246,244,239,0.6) 58%,
+    rgba(246,244,239,0.05) 100%);
 }
-.hero-panel .hero-lockup-img { width: min(400px, 100%); height: auto; margin: 0 auto 14px; }
-.hero-panel .hero-explainer {
-  color: var(--text); font-size: 1.08rem; text-align: center;
-  margin-bottom: 22px; max-width: none;
+.carousel-slide.light .hero-lockup-img {
+  width: clamp(300px, 34vw, 470px);
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
 }
-.hero-panel .carousel-ctas { justify-content: center; }
-.hero-panel .btn-ghost { color: var(--primary); border-color: var(--primary); }
-.hero-panel .btn-ghost:hover { background: var(--primary-light); color: var(--primary-dark); }
-@media (max-width: 600px) { .hero-panel { padding: 24px 20px 22px; } }
+.carousel-slide.light .hero-explainer {
+  color: var(--text);
+  font-size: 1.12rem;
+  max-width: 460px;
+  margin-bottom: 30px;
+}
+.carousel-slide.light .btn-ghost { color: var(--primary); border-color: rgba(94,45,94,0.45); }
+.carousel-slide.light .btn-ghost:hover {
+  background: rgba(94,45,94,0.06);
+  border-color: var(--primary);
+  color: var(--primary-dark);
+}
+@media (max-width: 600px) {
+  .carousel-slide.light .carousel-overlay {
+    background: linear-gradient(0deg,
+      rgba(246,244,239,0.97) 0%,
+      rgba(246,244,239,0.85) 52%,
+      rgba(246,244,239,0.12) 100%);
+  }
+  .carousel-slide.light .hero-lockup-img { width: min(320px, 82vw); }
+}
 
 /* --- Expandable service tiles (3-across) --- */
 .services-grid.tiles-3 { grid-template-columns: repeat(3, 1fr); }
