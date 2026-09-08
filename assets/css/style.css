@@ -1197,12 +1197,19 @@ section { padding: var(--section-pad) 32px; }
 }
 
 /* --- Light hero slide (slide 1: lockup on an ivory sweep, no card) --- */
+.carousel-slide.light .carousel-img {
+  background-size: 118% auto;
+  background-position: 100% 30%;
+}
+@media (max-width: 900px) {
+  .carousel-slide.light .carousel-img { background-size: cover; background-position: center 30%; }
+}
 .carousel-slide.light .carousel-overlay {
   background: linear-gradient(100deg,
     rgba(246,244,239,0.97) 0%,
-    rgba(246,244,239,0.92) 34%,
-    rgba(246,244,239,0.6) 58%,
-    rgba(246,244,239,0.05) 100%);
+    rgba(246,244,239,0.9) 36%,
+    rgba(246,244,239,0.45) 60%,
+    rgba(246,244,239,0.02) 92%);
 }
 .carousel-slide.light .hero-lockup-img {
   width: clamp(300px, 34vw, 470px);
