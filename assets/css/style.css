@@ -1437,3 +1437,8 @@ a.nav-drop-btn { text-decoration: none; }
   font-family: var(--heading-font); font-size: 1.35rem; color: rgba(255,255,255,0.92);
 }
 @media (max-width: 600px) { .footer-values-list { gap: 8px 24px; font-size: 1.15rem; } }
+
+/* Google review cards on the home page */
+.study-quotes.reviews blockquote { font-size: 1rem; line-height: 1.6; }
+.study-quotes.reviews cite { display: block; margin-top: 12px; font-family: var(--body-font); font-style: normal; font-size: 0.85rem; font-weight: 600; color: var(--primary); }
+.study-quotes.reviews cite::before { content: "\2014\00a0"; color: var(--gold); }
