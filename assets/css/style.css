@@ -81,13 +81,13 @@ p { line-height: 1.7; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 84px;
+  height: 92px;
   position: sticky;
   top: 0;
   z-index: 50;
 }
 .site-logo { display: flex; align-items: center; gap: 14px; color: var(--text); }
-.site-logo-mark { width: 52px; height: auto; }
+.site-logo-mark { width: 66px; height: auto; }
 .site-logo-text {
   font-family: 'Alex Brush', cursive;
   font-size: 2rem;
@@ -113,7 +113,7 @@ p { line-height: 1.7; }
 }
 @media (max-width: 1080px) {
   .site-logo-text { font-size: 1.4rem; }
-  .site-logo-mark { width: 42px; }
+  .site-logo-mark { width: 50px; }
 }
 .site-nav a {
   color: var(--text-light);
@@ -389,8 +389,7 @@ p { line-height: 1.7; }
 .carousel-controls {
   position: absolute;
   bottom: 36px;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 40px;
   z-index: 5;
   display: flex;
   align-items: center;
@@ -460,8 +459,10 @@ p { line-height: 1.7; }
   .carousel-content .hero-lockup-name { font-size: 2.2rem; }
   .carousel-content .hero-lockup-tagline { font-size: 1rem; }
   .carousel-content p { font-size: 1rem; }
+  .carousel-content { padding-bottom: 84px; }
   .carousel-controls {
     bottom: 24px;
+    right: 16px;
     padding: 6px 10px;
     gap: 14px;
   }
@@ -1251,7 +1252,7 @@ details.service-card summary h3 {
 }
 details.service-card summary h3::after {
   content: "+"; color: var(--gold); font-family: var(--body-font);
-  font-weight: 400; font-size: 1.3rem; line-height: 1; transition: transform 0.2s;
+  font-weight: 300; font-size: 2.1rem; line-height: 1; transition: transform 0.2s; flex-shrink: 0;
 }
 details.service-card[open] summary h3::after { content: "–"; }
 details.service-card p { margin-top: 10px; }
@@ -1405,3 +1406,34 @@ details.service-card p { margin-top: 10px; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; }
 }
+
+/* --- 2026-09-11: Melissa's Sept 10 sheet --- */
+/* All carousel slides use the light ivory treatment (slide 1 already did) */
+.carousel-slide.light .carousel-eyebrow { color: var(--primary); }
+.carousel-slide.light .carousel-content h1 { color: var(--dark); }
+.carousel-slide.light .carousel-content p { color: var(--text); }
+.carousel-slide.light .carousel-content h1 em { color: var(--primary); }
+.carousel-slide.light .carousel-controls { background: rgba(30,42,68,0.55); }
+
+/* For Professionals is a top-level menu item with a section dropdown */
+a.nav-drop-btn { text-decoration: none; }
+.dropdown-compact { min-width: 250px; }
+.dropdown-compact a { padding: 8px 14px; }
+
+/* Values moved into the footer (Melissa: "part of all aspects of our work") */
+.footer-values {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 40px;
+  padding: 34px 32px 4px;
+}
+.footer-values-inner { max-width: var(--container-max); margin: 0 auto; text-align: center; }
+.footer-values-label {
+  display: block; font-size: 0.76rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 16px;
+}
+.footer-values-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 44px;
+  font-family: var(--heading-font); font-size: 1.35rem; color: rgba(255,255,255,0.92);
+}
+@media (max-width: 600px) { .footer-values-list { gap: 8px 24px; font-size: 1.15rem; } }
