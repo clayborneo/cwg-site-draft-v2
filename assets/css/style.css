@@ -1464,9 +1464,10 @@ a.nav-drop-btn { text-decoration: none; }
 .te-joy-need { display: block; font-family: var(--heading-font); font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 8px; }
 .te-joy p { color: var(--text); font-size: 0.93rem; }
 
-/* Header wordmark: match the hero lockup script (Alex Brush, heavier stroke, teal "with") */
+/* Header wordmark: match the hero lockup script (Great Vibes, heavier stroke, teal "with") */
 .site-logo-text {
-  font-size: 2.25rem;
+  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-size: 2.35rem;
   color: var(--primary);
   -webkit-text-stroke: 0.55px var(--primary);
   letter-spacing: 0.2px;
