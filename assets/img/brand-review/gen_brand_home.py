@@ -8,9 +8,8 @@ VARS = [
  ('b','Midnight Navy + Sage Teal','#1E2A44','#2F5D56','#C7A65A'),
  ('c','Orchid, tone on tone','#5E2D5E','#B48AB7','#C7A65A'),
  ('d','Navy + Soft Orchid','#1E2A44','#B48AB7','#C7A65A'),
- ('e','Orchid + Rose','#5E2D5E','#B85C7A','#C7A65A'),
- ('f','Sage Teal + Orchid','#2F5D56','#5E2D5E','#C7A65A'),
- ('g','Plum monochrome','#5E2D5E','#5E2D5E','#5E2D5E'),
+ ('e','Sage Teal + Orchid','#2F5D56','#5E2D5E','#C7A65A'),
+ ('f','Plum monochrome','#5E2D5E','#5E2D5E','#5E2D5E'),
 ]
 def hex2rgb(h): return tuple(int(h[i:i+2],16) for i in (1,3,5))
 def rgb2hex(c): return '#%02X%02X%02X' % tuple(max(0,min(255,int(round(v)))) for v in c)
@@ -61,7 +60,7 @@ panel = '''
 <style>
   #color-switch { position: fixed; right: 18px; bottom: 18px; z-index: 999; background: #fff; border: 1px solid #E3DED4; border-radius: 12px; box-shadow: 0 14px 34px rgba(30,42,68,.18); padding: 12px 14px 10px; width: 232px; font-family: 'DM Sans', sans-serif; }
   #color-switch .sw-title { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #6b635f; margin-bottom: 8px; }
-  #color-switch .sw-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  #color-switch .sw-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   #color-switch button { display: flex; align-items: center; justify-content: center; gap: 3px; border: 1px solid #E3DED4; background: #fff; border-radius: 8px; padding: 6px 4px; cursor: pointer; font-family: inherit; }
   #color-switch button b { font-size: .8rem; color: #1E2A44; margin-left: 2px; }
   #color-switch button.active { border-color: #1E2A44; box-shadow: 0 0 0 2px rgba(30,42,68,.12); }

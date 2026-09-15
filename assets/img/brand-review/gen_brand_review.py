@@ -8,9 +8,8 @@ VARS = [
  ('b','Midnight Navy + Sage Teal','#1E2A44','#2F5D56','#C7A65A','Navy lettering, teal "with", gold sweep. The most traditional read.'),
  ('c','Orchid, tone on tone','#5E2D5E','#B48AB7','#C7A65A','Plum lettering with a soft orchid "with". Quieter, all one family, no teal.'),
  ('d','Navy + Soft Orchid','#1E2A44','#B48AB7','#C7A65A','Navy lettering, orchid "with". Keeps a purple note without any teal.'),
- ('e','Orchid + Rose','#5E2D5E','#B85C7A','#C7A65A','Plum lettering with a warmer rose "with", a nod to the original pink.'),
- ('f','Sage Teal + Orchid','#2F5D56','#5E2D5E','#C7A65A','The current pair swapped: teal lettering, plum "with".'),
- ('g','Plum monochrome','#5E2D5E','#5E2D5E','#5E2D5E','Everything in plum, for one-color uses such as embroidery, a stamp, or a fax cover.'),
+ ('e','Sage Teal + Orchid','#2F5D56','#5E2D5E','#C7A65A','The current pair swapped: teal lettering, plum "with".'),
+ ('f','Plum monochrome','#5E2D5E','#5E2D5E','#5E2D5E','Everything in plum, for one-color uses such as embroidery, a stamp, or a fax cover.'),
 ]
 PALETTE = [('Velvet Orchid','#5E2D5E','signature'),('Midnight Navy','#1E2A44','depth'),('Sage Teal','#2F5D56','balance'),
            ('Brushed Gold','#C7A65A','warmth'),('Soft Orchid','#B48AB7','tint'),('Warm Taupe','#ADA79D','neutral'),('Soft Ivory','#F6F4EF','ground')]
@@ -31,15 +30,19 @@ def card(k, name, p, s, a, note):
       </div>'''
 
 def badge(k, name, p, s, a, style='light'):
-    if style == 'primary' or style == 'secondary':
+    mark = f'<img class="nb-mark" src="assets/img/brand-review/badge-{k}.png" alt="">'
+    if style in ('primary', 'secondary'):
         bg = p if style == 'primary' else s
         strip = a if style == 'primary' else p
         label = 'solid ' + ('lettering color' if style == 'primary' else '"with" color')
         return f"""
       <figure class="nb-wrap">
         <div class="nb nb-dark" style="background:{bg}; border-color:{bg};">
-          <img class="nb-lockup" src="assets/img/brand-review/lockup-white.png" alt="">
-          <div class="nb-text nb-text-light"><strong>{PERSON[0]}</strong><span>{PERSON[1]}</span></div>
+          {mark}
+          <div class="nb-text nb-text-light">
+            <span class="nb-script" style="color:#fff;">Caring <em style="color:rgba(255,255,255,.8);">with</em> Grace</span>
+            <strong>{PERSON[0]}</strong><span>{PERSON[1]}</span>
+          </div>
           <div class="nb-strip" style="background:{strip};"></div>
         </div>
         <figcaption>{k.upper()} &middot; {label}</figcaption>
@@ -48,9 +51,9 @@ def badge(k, name, p, s, a, style='light'):
         return f"""
       <figure class="nb-wrap">
         <div class="nb nb-band">
-          <div class="nb-bandtop" style="background:{p};"><img src="assets/img/brand-review/lockup-white.png" alt=""></div>
+          <div class="nb-bandtop" style="background:{p};"><span class="nb-script nb-script-band">Caring <em style="color:rgba(255,255,255,.8);">with</em> Grace</span></div>
           <div class="nb-bandbody">
-            <img class="nb-mark-sm" src="assets/img/brand-review/badge-{k}.png" alt="">
+            {mark.replace('nb-mark', 'nb-mark-sm')}
             <div class="nb-text"><strong>{PERSON[0]}</strong><span>{PERSON[1]}</span></div>
           </div>
           <div class="nb-strip" style="background:{a};"></div>
@@ -60,7 +63,7 @@ def badge(k, name, p, s, a, style='light'):
     return f"""
       <figure class="nb-wrap">
         <div class="nb">
-          <img class="nb-mark" src="assets/img/brand-review/badge-{k}.png" alt="">
+          {mark}
           <div class="nb-text">
             <span class="nb-script" style="color:{p};">Caring <em style="color:{s};">with</em> Grace</span>
             <strong>{PERSON[0]}</strong><span>{PERSON[1]}</span>
@@ -70,10 +73,10 @@ def badge(k, name, p, s, a, style='light'):
         <figcaption>{k.upper()} &middot; ivory badge</figcaption>
       </figure>"""
 
-cards = ''.join(card(*v) for v in VARS)
 def badge_row(v):
     k, name = v[0], v[1]
     return f'<div class="nb-row"><h3><span class="letter">{k.upper()}</span>{name}</h3><div class="nb-grid">' + ''.join(badge(*v[:5], style=s) for s in ('light','primary','secondary','band')) + '</div></div>'
+cards = ''.join(card(*v) for v in VARS)
 badges = ''.join(badge_row(v) for v in VARS)
 darks = ''
 sw = ''.join(f'<div class="pal"><span style="background:{h}"></span><strong>{n}</strong><small>{h} &middot; {r}</small></div>' for n, h, r in PALETTE)
@@ -87,7 +90,7 @@ html = f'''<!DOCTYPE html>
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Allura&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Ephesis&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/img/brand-v6/badge-karen-64.png">
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -135,7 +138,7 @@ html = f'''<!DOCTYPE html>
           box-shadow:0 14px 30px rgba(30,42,68,.16), 0 2px 4px rgba(30,42,68,.10); display:flex; align-items:center; gap:14px; padding:18px 20px 22px 18px; overflow:hidden; }}
     .nb-mark {{ width:26%; height:auto; flex-shrink:0; }}
     .nb-text {{ display:flex; flex-direction:column; line-height:1.2; min-width:0; }}
-    .nb-script {{ font-family:'Allura',cursive; font-size:1.42rem; -webkit-text-stroke:.3px currentColor; margin-bottom:6px; white-space:nowrap; }}
+    .nb-script {{ font-family:'Ephesis',cursive; -webkit-text-stroke:.5px currentColor; font-size:1.42rem; -webkit-text-stroke:.3px currentColor; margin-bottom:6px; white-space:nowrap; }}
     .nb-script em {{ font-style:normal; font-size:.78em; margin:0 .2em; }}
     .nb-text strong {{ font-size:.98rem; white-space:nowrap; color:var(--navy); font-weight:700; letter-spacing:.01em; }}
     .nb-text span:last-child {{ font-size:.72rem; color:var(--muted); margin-top:3px; }}
@@ -145,7 +148,7 @@ html = f'''<!DOCTYPE html>
     .nb-row h3 {{ display:flex; align-items:center; gap:10px; font-size:1.05rem; color:var(--navy); font-weight:600; margin-bottom:14px; }}
     .nb-band {{ flex-direction:column; align-items:stretch; gap:0; padding:0; }}
     .nb-bandtop {{ height:38%; display:flex; align-items:center; justify-content:center; }}
-    .nb-bandtop img {{ height:78%; width:auto; }}
+    .nb-script-band {{ color:#fff; font-size:1.3rem; margin:0; }}
     .nb-bandbody {{ flex:1; display:flex; align-items:center; gap:12px; padding:8px 18px 14px 16px; }}
     .nb-mark-sm {{ width:16%; height:auto; flex-shrink:0; }}
     .nb-lockup {{ width:33%; height:auto; flex-shrink:0; }}
@@ -165,8 +168,8 @@ html = f'''<!DOCTYPE html>
   <div class="container">
     <div class="kicker">For review &middot; Logo &amp; colors &middot; September 2026</div>
     <h1>The logo, its colors, and a name badge</h1>
-    <p>The design is settled, so this page is about color. Section one shows the logo as it now appears on the draft site. Section two shows the same artwork in seven color combinations, lettered A to G. Section three puts each one on a name badge so you can judge it at real-world size. Nothing here is final until you say so.</p>
-    <p>One change since the last round: the lettering in the full logo, the round badge, and the website header now all use the same script, the one from the round badge (the C and G without the closed loops). <a href="brand-home.html">See any palette on the draft home page &rarr;</a></p>
+    <p>The design is settled, so this page is about color. Section one shows the logo as it now appears on the draft site. Section two shows the same artwork in six color combinations, lettered A to F. Section three puts each one on a name badge so you can judge it at real-world size. Nothing here is final until you say so.</p>
+    <p>One change since the last round: the lettering in the full logo, the round badge, and the website header now all use the same script, the one from the round badge (the C with the small inner curl and the open G). <a href="brand-home.html">See any palette on the draft home page &rarr;</a></p>
   </div>
 </div>
 
@@ -196,7 +199,7 @@ html = f'''<!DOCTYPE html>
 <section>
   <div class="container">
     <h2>3. On a name badge</h2>
-    <p class="note">A standard 3 by 1.5 inch magnetic badge, four ways for each palette: an ivory badge with the round mark and the name in script, a solid badge in the lettering color, a solid badge in the "with" color, and a color band over a white body. The solid and band versions use the reversed lockup. Angela's name is a stand-in for whoever wears it.</p>
+    <p class="note">A standard 3 by 1.5 inch magnetic badge, four ways for each palette: an ivory badge with the round mark and the name in script, a solid badge in the lettering color, a solid badge in the "with" color, and a color band over a white body. Every badge carries the round mark. Angela's name is a stand-in for whoever wears it.</p>
     <div class="nb-grid">{badges}{darks}</div>
   </div>
 </section>
