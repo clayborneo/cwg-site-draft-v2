@@ -160,6 +160,8 @@ html = f'''<!DOCTYPE html>
     .howto ul {{ padding-left:20px; margin-top:6px; }}
     footer {{ padding:36px 0 60px; color:#8a827c; font-size:.84rem; }}
     footer a {{ color:var(--plum); }}
+    .btn-link {{ display:inline-block; background:var(--plum); color:#fff; text-decoration:none; font-weight:600; font-size:.95rem; padding:12px 22px; border-radius:6px; }}
+    .btn-link:hover {{ background:#43203F; }}
   </style>
 </head>
 <body>
@@ -169,6 +171,7 @@ html = f'''<!DOCTYPE html>
     <div class="kicker">For review &middot; Logo &amp; colors &middot; September 2026</div>
     <h1>The logo, its colors, and a name badge</h1>
     <p>The design is settled, so this page is about color. Section one shows the logo as it now appears on the draft site. Section two shows the same artwork in six color combinations, lettered A to F. Section three puts each one on a name badge so you can judge it at real-world size. Nothing here is final until you say so.</p>
+    <p style="margin-top:18px;"><a class="btn-link" href="brand-home.html">See any palette on the draft home page &rarr;</a></p>
   </div>
 </div>
 
@@ -192,6 +195,7 @@ html = f'''<!DOCTYPE html>
     <h2>2. Color variations</h2>
     <p class="note">Same drawing every time. What changes is the lettering color, the color of "with" and the second set of leaves, and the sweep. Gold stays as the warm accent in all but the one-color version. When you reply, the letter is enough. To see a palette in context, <a href="brand-home.html">open the home page try-on</a> and pick a letter in the corner.</p>
     <div class="grid">{cards}</div>
+    <p style="text-align:center; margin:-10px 0 34px;"><a class="btn-link" href="brand-home.html">Try these on the home page &rarr;</a></p>
   </div>
 </section>
 
