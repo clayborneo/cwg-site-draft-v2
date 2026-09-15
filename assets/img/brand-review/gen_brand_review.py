@@ -30,18 +30,34 @@ def card(k, name, p, s, a, note):
         </div>
       </div>'''
 
-def badge(k, name, p, s, a, dark=False):
-    if dark:
-        return f'''
+def badge(k, name, p, s, a, style='light'):
+    if style == 'primary' or style == 'secondary':
+        bg = p if style == 'primary' else s
+        strip = a if style == 'primary' else p
+        label = 'solid ' + ('lettering color' if style == 'primary' else '"with" color')
+        return f"""
       <figure class="nb-wrap">
-        <div class="nb nb-dark" style="background:{p}; border-color:{p};">
+        <div class="nb nb-dark" style="background:{bg}; border-color:{bg};">
           <img class="nb-lockup" src="assets/img/brand-review/lockup-white.png" alt="">
           <div class="nb-text nb-text-light"><strong>{PERSON[0]}</strong><span>{PERSON[1]}</span></div>
+          <div class="nb-strip" style="background:{strip};"></div>
+        </div>
+        <figcaption>{k.upper()} &middot; {label}</figcaption>
+      </figure>"""
+    if style == 'band':
+        return f"""
+      <figure class="nb-wrap">
+        <div class="nb nb-band">
+          <div class="nb-bandtop" style="background:{p};"><img src="assets/img/brand-review/lockup-white.png" alt=""></div>
+          <div class="nb-bandbody">
+            <img class="nb-mark-sm" src="assets/img/brand-review/badge-{k}.png" alt="">
+            <div class="nb-text"><strong>{PERSON[0]}</strong><span>{PERSON[1]}</span></div>
+          </div>
           <div class="nb-strip" style="background:{a};"></div>
         </div>
-        <figcaption>{k.upper()} &middot; {name}, solid badge with the reversed lockup</figcaption>
-      </figure>'''
-    return f'''
+        <figcaption>{k.upper()} &middot; color band, white body</figcaption>
+      </figure>"""
+    return f"""
       <figure class="nb-wrap">
         <div class="nb">
           <img class="nb-mark" src="assets/img/brand-review/badge-{k}.png" alt="">
@@ -51,12 +67,15 @@ def badge(k, name, p, s, a, dark=False):
           </div>
           <div class="nb-strip" style="background:{a};"></div>
         </div>
-        <figcaption>{k.upper()} &middot; {name}</figcaption>
-      </figure>'''
+        <figcaption>{k.upper()} &middot; ivory badge</figcaption>
+      </figure>"""
 
 cards = ''.join(card(*v) for v in VARS)
-badges = ''.join(badge(*v[:5]) for v in VARS)
-darks = badge(*VARS[0][:5], dark=True) + badge(*VARS[1][:5], dark=True)
+def badge_row(v):
+    k, name = v[0], v[1]
+    return f'<div class="nb-row"><h3><span class="letter">{k.upper()}</span>{name}</h3><div class="nb-grid">' + ''.join(badge(*v[:5], style=s) for s in ('light','primary','secondary','band')) + '</div></div>'
+badges = ''.join(badge_row(v) for v in VARS)
+darks = ''
 sw = ''.join(f'<div class="pal"><span style="background:{h}"></span><strong>{n}</strong><small>{h} &middot; {r}</small></div>' for n, h, r in PALETTE)
 
 html = f'''<!DOCTYPE html>
@@ -68,7 +87,7 @@ html = f'''<!DOCTYPE html>
   <meta name="robots" content="noindex">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Allura&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="assets/img/brand-v6/badge-karen-64.png">
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
@@ -108,20 +127,28 @@ html = f'''<!DOCTYPE html>
     .pal span {{ display:block; height:64px; border-radius:6px; border:1px solid rgba(0,0,0,.06); margin-bottom:8px; }}
     .pal strong {{ display:block; font-size:.9rem; color:var(--navy); }}
     .pal small {{ color:var(--taupe); font-size:.76rem; }}
-    .nb-grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(360px,1fr)); gap:28px 24px; margin-bottom:24px; }}
+    .nb-grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:22px 20px; margin-bottom:8px; }}
+    .nb-grid .nb {{ max-width:340px; }}
     .nb-wrap {{ margin:0; }}
     .nb-wrap figcaption {{ font-size:.85rem; color:var(--muted); margin-top:10px; text-align:center; }}
     .nb {{ position:relative; width:100%; max-width:360px; aspect-ratio:2/1; margin:0 auto; background:#FFFDF9; border:1px solid #E2DCD0; border-radius:10px;
           box-shadow:0 14px 30px rgba(30,42,68,.16), 0 2px 4px rgba(30,42,68,.10); display:flex; align-items:center; gap:14px; padding:18px 20px 22px 18px; overflow:hidden; }}
-    .nb-mark {{ width:29%; height:auto; flex-shrink:0; }}
+    .nb-mark {{ width:26%; height:auto; flex-shrink:0; }}
     .nb-text {{ display:flex; flex-direction:column; line-height:1.2; min-width:0; }}
-    .nb-script {{ font-family:'Great Vibes',cursive; font-size:1.7rem; -webkit-text-stroke:.3px currentColor; margin-bottom:6px; white-space:nowrap; }}
+    .nb-script {{ font-family:'Allura',cursive; font-size:1.42rem; -webkit-text-stroke:.3px currentColor; margin-bottom:6px; white-space:nowrap; }}
     .nb-script em {{ font-style:normal; font-size:.78em; margin:0 .2em; }}
-    .nb-text strong {{ font-size:1.06rem; color:var(--navy); font-weight:700; letter-spacing:.01em; }}
+    .nb-text strong {{ font-size:.98rem; white-space:nowrap; color:var(--navy); font-weight:700; letter-spacing:.01em; }}
     .nb-text span:last-child {{ font-size:.72rem; color:var(--muted); margin-top:3px; }}
     .nb-strip {{ position:absolute; left:0; right:0; bottom:0; height:7px; }}
     .nb-dark {{ padding:16px 20px 22px 20px; }}
-    .nb-lockup {{ width:36%; height:auto; flex-shrink:0; }}
+    .nb-row {{ margin-bottom:34px; }}
+    .nb-row h3 {{ display:flex; align-items:center; gap:10px; font-size:1.05rem; color:var(--navy); font-weight:600; margin-bottom:14px; }}
+    .nb-band {{ flex-direction:column; align-items:stretch; gap:0; padding:0; }}
+    .nb-bandtop {{ height:38%; display:flex; align-items:center; justify-content:center; }}
+    .nb-bandtop img {{ height:78%; width:auto; }}
+    .nb-bandbody {{ flex:1; display:flex; align-items:center; gap:12px; padding:8px 18px 14px 16px; }}
+    .nb-mark-sm {{ width:16%; height:auto; flex-shrink:0; }}
+    .nb-lockup {{ width:33%; height:auto; flex-shrink:0; }}
     .nb-text-light strong {{ color:#fff; }}
     .nb-text-light span:last-child {{ color:rgba(255,255,255,.75); }}
     .howto {{ background:#fff; border:1px solid var(--border); border-left:4px solid var(--gold); border-radius:0 10px 10px 0; padding:20px 24px; max-width:780px; margin-bottom:30px; }}
@@ -138,7 +165,8 @@ html = f'''<!DOCTYPE html>
   <div class="container">
     <div class="kicker">For review &middot; Logo &amp; colors &middot; September 2026</div>
     <h1>The logo, its colors, and a name badge</h1>
-    <p>The design is settled, so this page is about color. Section one shows the logo exactly as it appears on the draft site. Section two shows the same artwork in seven color combinations, lettered A to G. Section three puts each one on a name badge so you can judge it at real-world size. Nothing here is final until you say so.</p>
+    <p>The design is settled, so this page is about color. Section one shows the logo as it now appears on the draft site. Section two shows the same artwork in seven color combinations, lettered A to G. Section three puts each one on a name badge so you can judge it at real-world size. Nothing here is final until you say so.</p>
+    <p>One change since the last round: the lettering in the full logo, the round badge, and the website header now all use the same script, the one from the round badge (the C and G without the closed loops). <a href="brand-home.html">See any palette on the draft home page &rarr;</a></p>
   </div>
 </div>
 
@@ -160,7 +188,7 @@ html = f'''<!DOCTYPE html>
 <section class="alt">
   <div class="container">
     <h2>2. Color variations</h2>
-    <p class="note">Same drawing every time. What changes is the lettering color, the color of "with" and the second set of leaves, and the sweep. Gold stays as the warm accent in all but the one-color version. When you reply, the letter is enough.</p>
+    <p class="note">Same drawing every time. What changes is the lettering color, the color of "with" and the second set of leaves, and the sweep. Gold stays as the warm accent in all but the one-color version. When you reply, the letter is enough. To see a palette in context, <a href="brand-home.html">open the home page try-on</a> and pick a letter in the corner.</p>
     <div class="grid">{cards}</div>
   </div>
 </section>
@@ -168,7 +196,7 @@ html = f'''<!DOCTYPE html>
 <section>
   <div class="container">
     <h2>3. On a name badge</h2>
-    <p class="note">A standard 3 by 1.5 inch magnetic badge, shown at roughly actual size on a laptop screen. The light badge uses the round CG mark with the name in script; the two solid versions use the reversed lockup. Angela's name is a stand-in for whoever wears it.</p>
+    <p class="note">A standard 3 by 1.5 inch magnetic badge, four ways for each palette: an ivory badge with the round mark and the name in script, a solid badge in the lettering color, a solid badge in the "with" color, and a color band over a white body. The solid and band versions use the reversed lockup. Angela's name is a stand-in for whoever wears it.</p>
     <div class="nb-grid">{badges}{darks}</div>
   </div>
 </section>

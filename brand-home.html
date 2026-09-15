@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caring with Grace | Aging Life Care Professionals in Dallas</title>
+  <title>Home page color try-on | Caring with Grace (review)</title>
   <meta name="description" content="Caring with Grace provides expert Aging Life Care management for families in the Dallas-Fort Worth area. Helping those you love live with dignity.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Alex+Brush&family=Allura&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="canonical" href="https://clayborneo.github.io/cwg-site-draft-v2/">
+  
   <meta name="robots" content="noindex">  <!-- draft only: remove at launch -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Caring with Grace">
@@ -22,13 +22,13 @@
 </head>
 <body>
 
-<div class="draft-banner">Draft v2 (new structure &amp; brand). <a href="https://clayborneo.github.io/cwg-site-draft/" target="_blank">Compare to draft v1 →</a> <a href="https://www.caringwithgrace.com" target="_blank">Current site →</a></div>
+<div class="draft-banner">Color try-on: pick a letter in the panel to see the draft home page in that palette. <a href="brand-review.html">Back to the logo review &rarr;</a></div>
 <div class="announce-band"><img src="assets/svg/butterfly.svg" alt="" width="28" height="28"><span>Celebrating 20 years of serving the North Texas area</span></div>
 <div class="header-accent"></div>
 
 <header class="site-header">
   <a href="index.html" class="site-logo">
-    <img src="assets/img/brand-v6/badge-karen.png" alt="" width="46" height="46" class="site-logo-mark">
+    <img src="assets/img/brand-review/badge-a.png" alt="" width="46" height="46" class="site-logo-mark" id="sw-badge">
     <span class="site-logo-text">Caring <span class="with">with</span> <span class="grace">Grace</span></span>
   </a>
   <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
@@ -71,7 +71,7 @@
       <div class="carousel-overlay"></div>
       <div class="carousel-content">
         <h1 class="sr-only">Caring with Grace: helping those you love live with dignity</h1>
-        <img class="hero-lockup-img" src="assets/img/brand-v6/lockup-v1.png" alt="Caring with Grace">
+        <img class="hero-lockup-img" src="assets/img/brand-review/lockup-a.png" alt="Caring with Grace" id="sw-lockup">
         <p class="hero-explainer">We are trusted experts who assess, plan, and coordinate every part of your loved one's care.</p>
         <div class="carousel-ctas">
           <a href="contact.html" class="btn btn-primary">Start a Conversation</a>
@@ -331,6 +331,49 @@
   </div>
 </footer>
 
+
+<div id="color-switch" aria-label="Color variation">
+  <div class="sw-title">Try a palette</div>
+  <div class="sw-buttons"><button type="button" data-var="a" title="Velvet Orchid + Sage Teal"><span class="sw-dot" style="background:#5E2D5E"></span><span class="sw-dot" style="background:#2F5D56"></span><b>A</b></button><button type="button" data-var="b" title="Midnight Navy + Sage Teal"><span class="sw-dot" style="background:#1E2A44"></span><span class="sw-dot" style="background:#2F5D56"></span><b>B</b></button><button type="button" data-var="c" title="Orchid, tone on tone"><span class="sw-dot" style="background:#5E2D5E"></span><span class="sw-dot" style="background:#B48AB7"></span><b>C</b></button><button type="button" data-var="d" title="Navy + Soft Orchid"><span class="sw-dot" style="background:#1E2A44"></span><span class="sw-dot" style="background:#B48AB7"></span><b>D</b></button><button type="button" data-var="e" title="Orchid + Rose"><span class="sw-dot" style="background:#5E2D5E"></span><span class="sw-dot" style="background:#B85C7A"></span><b>E</b></button><button type="button" data-var="f" title="Sage Teal + Orchid"><span class="sw-dot" style="background:#2F5D56"></span><span class="sw-dot" style="background:#5E2D5E"></span><b>F</b></button><button type="button" data-var="g" title="Plum monochrome"><span class="sw-dot" style="background:#5E2D5E"></span><span class="sw-dot" style="background:#5E2D5E"></span><b>G</b></button></div>
+  <div class="sw-name" id="sw-name">A &middot; Velvet Orchid + Sage Teal</div>
+</div>
+<style>
+  #color-switch { position: fixed; right: 18px; bottom: 18px; z-index: 999; background: #fff; border: 1px solid #E3DED4; border-radius: 12px; box-shadow: 0 14px 34px rgba(30,42,68,.18); padding: 12px 14px 10px; width: 232px; font-family: 'DM Sans', sans-serif; }
+  #color-switch .sw-title { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: #6b635f; margin-bottom: 8px; }
+  #color-switch .sw-buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  #color-switch button { display: flex; align-items: center; justify-content: center; gap: 3px; border: 1px solid #E3DED4; background: #fff; border-radius: 8px; padding: 6px 4px; cursor: pointer; font-family: inherit; }
+  #color-switch button b { font-size: .8rem; color: #1E2A44; margin-left: 2px; }
+  #color-switch button.active { border-color: #1E2A44; box-shadow: 0 0 0 2px rgba(30,42,68,.12); }
+  #color-switch .sw-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  #color-switch .sw-name { font-size: .78rem; color: #1E2A44; margin-top: 8px; }
+  @media (max-width: 600px) { #color-switch { right: 10px; bottom: 10px; width: 200px; } }
+</style>
+<script>
+(function(){
+  var VARS = {
+  a: {name: 'Velvet Orchid + Sage Teal', tokens: {'--primary': '#5E2D5E', '--primary-dark': '#442044', '--primary-light': '#EFEAEF', '--brand-pink': '#5E2D5E', '--periwinkle': '#A68CA6', '--soft-pink': '#A68CA6', '--teal': '#2F5D56', '--secondary-dark': '#284F49', '--secondary-light': '#E6ECEB', '--gold': '#C7A65A', '--secondary': '#C7A65A'}},
+  b: {name: 'Midnight Navy + Sage Teal', tokens: {'--primary': '#1E2A44', '--primary-dark': '#161E31', '--primary-light': '#E8EAEC', '--brand-pink': '#1E2A44', '--periwinkle': '#838A98', '--soft-pink': '#838A98', '--teal': '#2F5D56', '--secondary-dark': '#284F49', '--secondary-light': '#E6ECEB', '--gold': '#C7A65A', '--secondary': '#C7A65A'}},
+  c: {name: 'Orchid, tone on tone', tokens: {'--primary': '#5E2D5E', '--primary-dark': '#442044', '--primary-light': '#EFEAEF', '--brand-pink': '#5E2D5E', '--periwinkle': '#A68CA6', '--soft-pink': '#A68CA6', '--teal': '#B48AB7', '--secondary-dark': '#99759C', '--secondary-light': '#F6F1F6', '--gold': '#C7A65A', '--secondary': '#C7A65A'}},
+  d: {name: 'Navy + Soft Orchid', tokens: {'--primary': '#1E2A44', '--primary-dark': '#161E31', '--primary-light': '#E8EAEC', '--brand-pink': '#1E2A44', '--periwinkle': '#838A98', '--soft-pink': '#838A98', '--teal': '#B48AB7', '--secondary-dark': '#99759C', '--secondary-light': '#F6F1F6', '--gold': '#C7A65A', '--secondary': '#C7A65A'}},
+  e: {name: 'Orchid + Rose', tokens: {'--primary': '#5E2D5E', '--primary-dark': '#442044', '--primary-light': '#EFEAEF', '--brand-pink': '#5E2D5E', '--periwinkle': '#A68CA6', '--soft-pink': '#A68CA6', '--teal': '#B85C7A', '--secondary-dark': '#9C4E68', '--secondary-light': '#F6EBEF', '--gold': '#C7A65A', '--secondary': '#C7A65A'}},
+  f: {name: 'Sage Teal + Orchid', tokens: {'--primary': '#2F5D56', '--primary-dark': '#22433E', '--primary-light': '#EAEFEE', '--brand-pink': '#2F5D56', '--periwinkle': '#8DA6A2', '--soft-pink': '#8DA6A2', '--teal': '#5E2D5E', '--secondary-dark': '#502650', '--secondary-light': '#ECE6EC', '--gold': '#C7A65A', '--secondary': '#C7A65A'}},
+  g: {name: 'Plum monochrome', tokens: {'--primary': '#5E2D5E', '--primary-dark': '#442044', '--primary-light': '#EFEAEF', '--brand-pink': '#5E2D5E', '--periwinkle': '#A68CA6', '--soft-pink': '#A68CA6', '--teal': '#5E2D5E', '--secondary-dark': '#502650', '--secondary-light': '#ECE6EC', '--gold': '#5E2D5E', '--secondary': '#5E2D5E'}}
+  };
+  var root = document.documentElement;
+  function apply(k){
+    var v = VARS[k]; if (!v) return;
+    Object.keys(v.tokens).forEach(function(name){ root.style.setProperty(name, v.tokens[name]); });
+    document.getElementById('sw-lockup').src = 'assets/img/brand-review/lockup-' + k + '.png';
+    document.getElementById('sw-badge').src = 'assets/img/brand-review/badge-' + k + '.png';
+    document.getElementById('sw-name').textContent = k.toUpperCase() + ' \u00b7 ' + v.name;
+    document.querySelectorAll('#color-switch button').forEach(function(b){ b.classList.toggle('active', b.dataset.var === k); });
+    try { history.replaceState(null, '', '#' + k); } catch (e) {}
+  }
+  document.querySelectorAll('#color-switch button').forEach(function(b){ b.addEventListener('click', function(){ apply(b.dataset.var); }); });
+  var start = (location.hash || '#a').slice(1);
+  apply(VARS[start] ? start : 'a');
+})();
+</script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
