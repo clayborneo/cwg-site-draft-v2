@@ -1171,7 +1171,7 @@ section { padding: var(--section-pad) 32px; }
   position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%);
   background: var(--white); border: 1px solid var(--border); border-radius: 10px;
   box-shadow: 0 14px 34px rgba(30,42,68,0.12);
-  list-style: none; min-width: 280px; padding: 10px;
+  list-style: none; min-width: 340px; padding: 10px;
   opacity: 0; visibility: hidden; transition: opacity 0.15s;
   z-index: 60;
 }
@@ -1463,7 +1463,11 @@ a.nav-drop-btn { text-decoration: none; }
 .te-benefit li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
 .te-joys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 @media (max-width: 820px) { .te-joys { grid-template-columns: 1fr; } }
-.te-joy { background: var(--primary-light); border-radius: 10px; padding: 22px 22px 20px; }
+.te-joy { background: var(--primary-light); border-radius: 10px; padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.te-joy-photo { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.te-joy-text { padding: 20px 22px 22px; }
+.te-why-aside { display: grid; gap: 18px; align-self: center; }
+.te-why-aside img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(30, 42, 68, 0.12); }
 .te-joy-need { display: block; font-family: var(--heading-font); font-size: 1.1rem; color: var(--primary-dark); margin-bottom: 8px; }
 .te-joy p { color: var(--text); font-size: 0.93rem; }
 
