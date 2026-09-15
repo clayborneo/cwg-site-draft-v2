@@ -89,7 +89,7 @@ p { line-height: 1.7; }
 .site-logo { display: flex; align-items: center; gap: 14px; color: var(--text); }
 .site-logo-mark { width: 66px; height: auto; }
 .site-logo-text {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 2rem;
   letter-spacing: 0.5px;
   white-space: nowrap;
@@ -333,7 +333,7 @@ p { line-height: 1.7; }
 }
 
 .carousel-content .hero-lockup-name {
-  font-family: 'Alex Brush', cursive;
+  font-family: 'Great Vibes', cursive;
   font-weight: 400;
   font-size: 4.6rem;
   line-height: 1.08;
@@ -1439,7 +1439,10 @@ a.nav-drop-btn { text-decoration: none; }
 @media (max-width: 600px) { .footer-values-list { gap: 8px 24px; font-size: 1.15rem; } }
 
 /* Google review cards on the home page */
-.study-quotes.reviews blockquote { font-size: 1rem; line-height: 1.6; }
+.study-quotes.reviews blockquote {
+  font-family: var(--body-font); font-style: normal; font-size: 0.98rem; line-height: 1.7;
+  letter-spacing: 0; color: var(--text); padding: 24px 26px 22px;
+}
 .study-quotes.reviews cite { display: block; margin-top: 12px; font-family: var(--body-font); font-style: normal; font-size: 0.85rem; font-weight: 600; color: var(--primary); }
 .study-quotes.reviews cite::before { content: "\2014\00a0"; color: var(--gold); }
 
@@ -1466,7 +1469,7 @@ a.nav-drop-btn { text-decoration: none; }
 
 /* Header wordmark: match the hero lockup script (Great Vibes, heavier stroke, teal "with") */
 .site-logo-text {
-  font-family: 'Great Vibes', 'Alex Brush', cursive;
+  font-family: 'Great Vibes', cursive;
   font-size: 2.35rem;
   color: var(--primary);
   -webkit-text-stroke: 0.55px var(--primary);
