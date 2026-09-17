@@ -1539,4 +1539,4 @@ h1, h2, h3 { text-wrap: balance; }
   border: 1px solid rgba(94,45,94,0.14); box-shadow: none;
   font-size: 1.15rem; padding: 18px 26px; margin: 0 auto 34px; max-width: 900px; text-wrap: balance;
 }
-.pro-formula.light em { width: 32px; height: 32px; font-size: 1.15rem; margin: 0 8px; }
+.pro-formula.light em { width: 32px; height: 32px; font-size: 1.15rem; margin: 0 8px; background: var(--primary); color: #fff; }
