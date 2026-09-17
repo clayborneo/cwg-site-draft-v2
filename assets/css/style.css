@@ -1532,7 +1532,9 @@ h1, h2, h3 { text-wrap: balance; }
 .footer-bottom a { color: rgba(255,255,255,0.8); }
 .carousel-slide.light .carousel-content h1.hero-tagline {
   font-family: var(--heading-font); font-weight: 400; font-size: clamp(1.35rem, 2.1vw, 1.75rem);
-  line-height: 1.25; color: var(--primary-dark); margin: 4px 0 14px; max-width: 520px;
+  line-height: 1.25; color: var(--primary-dark); max-width: 520px;
+  /* the lockup PNG has ~22% empty canvas under the gold sweep (240 of 1071 px); pull the tagline up into it */
+  margin: calc(-0.155 * clamp(300px, 34vw, 470px)) 0 14px;
 }
 .pro-formula.light {
   /* light on the left sweeping into plum on the right; the crossover sits under the "+" circle */
