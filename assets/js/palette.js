@@ -16,6 +16,7 @@
   Object.keys(VARS[k]).forEach(function (n) { root.style.setProperty(n, VARS[k][n]); });
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('img.site-logo-mark').forEach(function (i) { i.src = 'assets/img/brand-review/badge-' + k + '.png'; });
+    document.querySelectorAll('img.site-logo-word').forEach(function (i) { i.src = 'assets/img/brand-review/wordmark-' + k + '.png'; });
     document.querySelectorAll('img.hero-lockup-img').forEach(function (i) { i.src = 'assets/img/brand-review/lockup-' + k + '.png'; });
     document.querySelectorAll('a[href]').forEach(function (a) {
       var h = a.getAttribute('href');

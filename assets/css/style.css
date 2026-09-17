@@ -1542,3 +1542,9 @@ h1, h2, h3 { text-wrap: balance; }
   font-size: 1.15rem; padding: 18px 26px; margin: 0 auto 34px; max-width: 900px; text-wrap: balance;
 }
 .pro-formula.light em { width: 32px; height: 32px; font-size: 1.15rem; margin: 0 8px; background: var(--primary); color: #fff; }
+
+/* 2026-09-17 (Clay): header wordmark is the hero lockup's own lettering, cut from the art and set on one baseline,
+   so the C and G match the logo exactly (no live font approximates it) */
+.site-logo-word { height: 46px; width: auto; display: block; }
+@media (max-width: 1260px) { .site-logo-word { height: 38px; } }
+@media (max-width: 1080px) { .site-logo-word { height: 32px; } }
