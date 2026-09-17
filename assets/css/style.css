@@ -935,7 +935,7 @@ section { padding: var(--section-pad) 32px; }
 /* --- Footer --- */
 .site-footer {
   background: var(--dark);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.85);
   padding: 64px 32px 28px;
 }
 .footer-inner {
@@ -1522,3 +1522,21 @@ a.nav-drop-btn { text-decoration: none; }
 /* 2026-09-16: balanced headings (no dangling single word), For Professionals CTAs */
 h1, h2, h3 { text-wrap: balance; }
 .pro-cta { margin-top: 24px; }
+
+/* 2026-09-17 (Melissa): brighter footer text, tagline on the home hero, formula bar moved to the For Professionals overview */
+.site-footer { color: rgba(255,255,255,0.86); }
+.footer-brand p { color: rgba(255,255,255,0.9); }
+.footer-col a { color: rgba(255,255,255,0.86); }
+.footer-social a { color: rgba(255,255,255,0.92); }
+.footer-bottom { color: rgba(255,255,255,0.7); }
+.footer-bottom a { color: rgba(255,255,255,0.8); }
+.carousel-slide.light .carousel-content h1.hero-tagline {
+  font-family: var(--heading-font); font-weight: 400; font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+  line-height: 1.25; color: var(--primary-dark); margin: 4px 0 14px; max-width: 520px;
+}
+.pro-formula.light {
+  background: var(--primary-light); color: var(--primary-dark);
+  border: 1px solid rgba(94,45,94,0.14); box-shadow: none;
+  font-size: 1.15rem; padding: 18px 26px; margin: 0 auto 34px; max-width: 760px;
+}
+.pro-formula.light em { width: 32px; height: 32px; font-size: 1.15rem; margin: 0 8px; }
