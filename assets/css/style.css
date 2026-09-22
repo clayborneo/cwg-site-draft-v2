@@ -1551,3 +1551,15 @@ h1, h2, h3 { text-wrap: balance; }
 .site-logo-word { height: 46px; width: auto; display: block; }
 @media (max-width: 1260px) { .site-logo-word { height: 38px; } }
 @media (max-width: 1080px) { .site-logo-word { height: 32px; } }
+
+/* --- Service area (Contact page) + footer line --- */
+.service-area { background: var(--white); padding: var(--section-pad) 0; border-top: 1px solid var(--border); }
+.service-area .section-inner { max-width: 900px; margin: 0 auto; padding: 0 24px; text-align: center; }
+.service-area h2 { font-size: 1.9rem; margin: 6px 0 12px; }
+.service-area p { color: var(--text-light); max-width: 620px; margin: 0 auto 22px; }
+.city-list { list-style: none; margin: 0 0 22px; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 12px; }
+.city-list li { background: var(--primary-light); color: var(--primary-dark); border: 1px solid #DED3DE; border-radius: 999px; padding: 7px 16px; font-size: 0.95rem; font-weight: 500; }
+.service-area-note { font-size: 0.95rem; }
+.service-area-note a { color: var(--primary); font-weight: 600; }
+.footer-area { max-width: var(--container-max); margin: 26px auto 0; padding: 0 32px; text-align: center; font-size: 0.82rem; line-height: 1.6; color: rgba(255,255,255,0.72); }
+.footer-area a { color: rgba(255,255,255,0.9); text-decoration: underline; white-space: nowrap; }
