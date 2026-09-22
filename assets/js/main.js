@@ -164,7 +164,7 @@ if (GA_MEASUREMENT_ID) {
 // Contact form
 // Set to the deployed Cloudflare Worker URL (see workers/contact-form/README).
 // While empty, forms fall back to opening the visitor's email app.
-const CONTACT_FORM_ENDPOINT = '';
+const CONTACT_FORM_ENDPOINT = 'https://cwg-contact-form.caringwithgrace.workers.dev';
 const CONTACT_FALLBACK_EMAIL = 'info@caringwithgrace.com';
 // Cloudflare Turnstile site key (public). The Worker refuses to send without a
 // valid token once REQUIRE_TURNSTILE is on, so set both together.

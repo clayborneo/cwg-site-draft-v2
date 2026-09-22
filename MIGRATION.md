@@ -35,7 +35,8 @@ The one thing that must not break: Google Workspace MX records (company email).
 - [ ] Repo launch checklist:
       - remove draft banner from all pages
       - delete `noindex` metas; set robots.txt to Allow
-      - canonicals, og:url, sitemap.xml -> https://www.caringwithgrace.com/
+      - canonicals, og:url, sitemap.xml, and the JSON-LD `url` on index.html
+        -> https://www.caringwithgrace.com/
       - delete brand-review.html, brand-home.html, assets/js/palette.js
       - add redirect stubs for old Wix paths (about-us, caringoncall, blog,
         and the old resources sub-pages)
