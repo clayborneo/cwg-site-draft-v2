@@ -6,19 +6,21 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Palette: Karen's brand deck — Velvet Orchid / Midnight Navy / Sage Teal /
-     Soft Ivory / Warm Taupe / Soft Orchid / Brushed Gold */
-  --primary: #5E2D5E;          /* Velvet Orchid — signature */
-  --primary-light: #F2EAF2;
-  --primary-dark: #43203F;
-  --periwinkle: #B48AB7;       /* legacy var name; now Soft Orchid */
+  /* Palette: plum monochrome (Angela's pick, Sept 2026). Karen's deck neutrals
+     (Midnight Navy / Soft Ivory / Warm Taupe) stay; orchid, teal and gold all
+     resolve to plum tones. The one gold left on the site is the 20-years
+     banner gradient below. */
+  --primary: #5E2D5E;          /* Velvet Plum — signature */
+  --primary-light: #EFEAEF;    /* Plum Mist */
+  --primary-dark: #442044;     /* Deep Plum */
+  --periwinkle: #A68CA6;       /* legacy var name; now Soft Orchid (plum) */
   --brand-pink: #5E2D5E;       /* legacy var name; script lockup color */
-  --soft-pink: #B48AB7;
-  --teal: #2F5D56;             /* Sage Teal — balance */
-  --gold: #C7A65A;             /* Brushed Gold — restrained accent */
-  --secondary: #C7A65A;
-  --secondary-dark: #8A6390;
-  --secondary-light: #EFE8F0;
+  --soft-pink: #A68CA6;
+  --teal: #5E2D5E;             /* legacy: former Sage Teal accent */
+  --gold: #5E2D5E;             /* legacy: former Brushed Gold accent */
+  --secondary: #5E2D5E;
+  --secondary-dark: #502650;   /* Wine Plum */
+  --secondary-light: #ECE6EC;  /* Plum Haze */
   --dark: #1E2A44;             /* Midnight Navy — grounding */
   --light: #F6F4EF;            /* Soft Ivory — canvas */
   --white: #FFFFFF;
@@ -57,7 +59,7 @@ p { line-height: 1.7; }
   justify-content: center;
   gap: 12px;
   padding: 12px 16px;
-  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary) 100%);
+  background: linear-gradient(90deg, #C7A65A 0%, var(--primary) 100%); /* Brushed Gold to plum: the butterfly's one home */
   color: var(--white);
   font-family: var(--heading-font);
   font-size: 1.08rem;
@@ -691,6 +693,7 @@ section { padding: var(--section-pad) 32px; }
 .hp-field { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
 .form-privacy { font-size: 0.82rem; color: #8a93a5; margin: -4px 0 4px; }
 .form-error { color: #B3261E; font-size: 0.9rem; margin-bottom: 8px; }
+.form-turnstile { margin-bottom: 12px; min-height: 65px; }
 .form-success { padding: 24px 8px; }
 .form-success h3 { font-size: 1.3rem; margin-bottom: 8px; }
 .form-success p { color: var(--text-light); }

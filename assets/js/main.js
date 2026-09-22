@@ -165,10 +165,31 @@ if (GA_MEASUREMENT_ID) {
 // Set to the deployed Cloudflare Worker URL (see workers/contact-form/README).
 // While empty, forms fall back to opening the visitor's email app.
 const CONTACT_FORM_ENDPOINT = '';
-const CONTACT_FALLBACK_EMAIL = 'melissa@caringwithgrace.com';
+const CONTACT_FALLBACK_EMAIL = 'info@caringwithgrace.com';
+// Cloudflare Turnstile site key (public). The Worker refuses to send without a
+// valid token once REQUIRE_TURNSTILE is on, so set both together.
+const TURNSTILE_SITE_KEY = '0x4AAAAAAFACQEiBZ_OzuWvH';
 
 document.querySelectorAll('.contact-form').forEach((form) => {
   form.removeAttribute('onsubmit');
+
+  let turnstileId = null;
+  if (CONTACT_FORM_ENDPOINT && TURNSTILE_SITE_KEY) {
+    const slot = document.createElement('div');
+    slot.className = 'form-turnstile';
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.parentNode.insertBefore(slot, submitBtn);
+    window.cwgTurnstileReady = window.cwgTurnstileReady || new Promise((resolve) => {
+      window.cwgTurnstileLoaded = resolve;
+      const sc = document.createElement('script');
+      sc.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=cwgTurnstileLoaded';
+      sc.async = true;
+      document.head.appendChild(sc);
+    });
+    window.cwgTurnstileReady.then(() => {
+      turnstileId = window.turnstile.render(slot, { sitekey: TURNSTILE_SITE_KEY });
+    });
+  }
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!form.reportValidity()) return;
@@ -198,6 +219,10 @@ document.querySelectorAll('.contact-form').forEach((form) => {
       return;
     }
 
+    if (turnstileId !== null) {
+      payload.turnstileToken = window.turnstile.getResponse(turnstileId) || '';
+    }
+
     btn.disabled = true;
     const btnText = btn.textContent;
     btn.textContent = 'Sending…';
@@ -216,6 +241,8 @@ document.querySelectorAll('.contact-form').forEach((form) => {
     } catch (err) {
       btn.disabled = false;
       btn.textContent = btnText;
+      // Tokens are single-use: a retry needs a fresh one.
+      if (turnstileId !== null) window.turnstile.reset(turnstileId);
       let errEl = form.querySelector('.form-error');
       if (!errEl) {
         errEl = document.createElement('p');

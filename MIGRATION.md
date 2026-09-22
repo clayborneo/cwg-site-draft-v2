@@ -1,45 +1,62 @@
 # Off-Wix migration plan (ISS-009 / ISS-033)
 
-Status: planned, not started. Wix subscription paid through 2026, so there
-is no deadline pressure; the old site remains a rollback target throughout.
+Status: planned, not started. Revised 2026-09-21.
 
-## Phase 0 — Prep (~30 min, zero risk)
-- [ ] Screenshot / export every DNS record in Wix's DNS manager.
-      Critical: Google Workspace MX records (company email), SPF TXT,
-      site-verification TXTs, A/CNAME records pointing at Wix.
-- [ ] Create CWG Cloudflare account (business-owned email).
-- [ ] Cloudflare "Add site" -> caringwithgrace.com -> verify its imported
-      records against the screenshots; add anything missed.
-- Nothing changes publicly in this phase.
+Wix does not allow nameserver changes on a domain registered with Wix, so the
+earlier "move DNS to Cloudflare" phase is gone. The site launches by editing
+two kinds of record inside Wix DNS (apex A, `www` CNAME). Email records are
+never touched. The old Wix site stays published as a rollback target.
 
-## Phase 1 — Move DNS to Cloudflare (~15 min + propagation)
-- [ ] In Wix domain settings, set nameservers to the two Cloudflare NS.
-- [ ] Wait for propagation (minutes-hours). Site stays on Wix, email
-      unaffected, because the records are identical.
-- Rollback: restore Wix nameservers.
-- After this phase the contact-form email setup (Phase 3) is unblocked.
+The one thing that must not break: Google Workspace MX records (company email).
 
-## Phase 2 — Site cutover (~1 hour; needs team go-ahead; the public launch)
+## Phase 0 — Prep (zero risk)
+- [ ] Screenshot / export every DNS record in Wix's DNS manager (MX and
+      priorities, SPF TXT, `_dmarc` CNAME, verification TXTs, A, CNAME).
+      This is the rollback sheet.
+- [ ] CWG-owned accounts: GitHub organization, Cloudflare (Worker + Turnstile
+      only, not DNS), Postmark. Two admins each.
+- [ ] Transfer this repo into the organization and rename it.
+
+## Phase 1 — Contact form (can ship on the draft site)
+- [ ] Postmark: verify the caringwithgrace.com DOMAIN (DKIM TXT + custom
+      Return-Path CNAME, both added in Wix DNS). Leave the apex SPF alone.
+- [ ] Cloudflare Turnstile widget; hostnames = draft host + production hosts.
+- [ ] From workers/contact-form/: `wrangler login`,
+      `wrangler secret put POSTMARK_SERVER_TOKEN`,
+      `wrangler secret put TURNSTILE_SECRET`, `wrangler deploy`.
+      ALLOWED_ORIGINS must include the organization's github.io origin.
+- [ ] Set CONTACT_FORM_ENDPOINT and TURNSTILE_SITE_KEY in assets/js/main.js,
+      bump the `?v=` on main.js, push.
+- [ ] Test with TO_EMAIL pointed at the implementer. In Gmail "Show original":
+      DKIM, SPF and DMARC all PASS; Reply-To is the visitor.
+- [ ] Flip TO_EMAIL to the intake inbox; confirm inbox delivery with no filter.
+
+## Phase 2 — Site cutover (needs team go-ahead; the public launch)
 - [ ] Repo launch checklist:
       - remove draft banner from all pages
       - delete `noindex` metas; set robots.txt to Allow
-      - canonicals + sitemap.xml -> https://www.caringwithgrace.com/
-      - add CNAME file (www.caringwithgrace.com) + set custom domain in
-        GitHub Pages settings; enforce HTTPS
+      - canonicals, og:url, sitemap.xml -> https://www.caringwithgrace.com/
+      - delete brand-review.html, brand-home.html, assets/js/palette.js
+      - add redirect stubs for old Wix paths (about-us, caringoncall, blog,
+        and the old resources sub-pages)
       - retire the 20-years banner if past 2026
-- [ ] Cloudflare: point apex + www from Wix to GitHub Pages
-      (A 185.199.108.153 / .109. / .110. / .111.; CNAME www -> clayborneo.github.io).
-- [ ] Apex->www redirect rule; verify every page, GA Realtime, favicon.
-- Rollback: repoint the two records at Wix.
+- [ ] GitHub Pages settings: custom domain `www.caringwithgrace.com`.
+- [ ] Wix DNS: `www` CNAME -> `<organization>.github.io`; apex A ->
+      185.199.108.153 / .109.153 / .110.153 / .111.153 (replacing Wix's).
+      Change nothing else.
+- [ ] Wait for GitHub's certificate (minutes, up to an hour), then tick
+      Enforce HTTPS. GitHub handles apex -> www.
+- [ ] Verify: every page on both hostnames, a real 404, the form from the
+      production origin, GA Realtime, external email in and out.
+- Rollback: restore the Wix A records and `www` CNAME from the Phase 0 sheet.
 
-## Phase 3 — Contact form + hardening (~45 min; needs only Phase 1)
-- [ ] Postmark account; verify caringwithgrace.com domain (DKIM TXT +
-      Return-Path CNAME, 2 min in Cloudflare DNS).
-- [ ] `wrangler login` / `wrangler secret put POSTMARK_SERVER_TOKEN` /
-      `wrangler deploy` from workers/contact-form/.
-- [ ] Paste Worker URL into CONTACT_FORM_ENDPOINT in assets/js/main.js.
-- [ ] Test end-to-end with TO_EMAIL pointed at Clay, then flip to Melissa.
-- [ ] Optional: Turnstile spam protection; forms.caringwithgrace.com route.
+## Phase 3 — After launch
+- [ ] Search Console: verify domain, submit sitemap.
+- [ ] Worker ALLOWED_ORIGINS and Turnstile hostnames: drop the draft origin.
+- [ ] Wix: turn off auto-renew on the SITE plan only. The domain subscription
+      is the registration and stays.
 
-Total: ~2-3 hours of hands-on work across a few days. The one thing that
-must not break: Google Workspace MX records (company email).
+## Not planned: leaving Wix DNS
+Requires transferring the registration to another registrar (locked for 60 days
+after the September 2026 registrar move) and re-creating every record there
+first. Only worth doing if something forces it.
