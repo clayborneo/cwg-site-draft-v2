@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand Guide | Caring with Grace</title>
+  <meta name="description" content="Internal brand guide.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Great+Vibes&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://clayborneo.github.io/cwg-site-draft-v2/brand-guide.html">
+  <meta name="robots" content="noindex, nofollow">  <!-- internal page: keep this forever -->
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/img/brand-v6/badge-plum-64.png">
+  <link rel="stylesheet" href="assets/css/style.css?v=26">
+  <style>
+    .unlock { min-height: 58vh; display: flex; align-items: center; justify-content: center; padding: 60px 24px; }
+    .unlock-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 40px 36px; max-width: 440px; width: 100%; text-align: center; }
+    .unlock-card img { width: 84px; height: 84px; margin-bottom: 14px; }
+    .unlock-card h1 { font-size: 1.7rem; margin: 0 0 6px; }
+    .unlock-card p { color: var(--text-light); font-size: 0.95rem; margin: 0 0 20px; }
+    .unlock-card form { display: flex; gap: 8px; }
+    .unlock-card input { flex: 1; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; font: inherit; font-size: 1rem; }
+    .unlock-card .err { color: #B3261E; font-size: 0.9rem; margin-top: 12px; min-height: 1.2em; }
+    #guide { display: none; padding-top: 24px; }
+    #guide.on { display: block; }
+    .unlock.off { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="draft-banner">Draft v2 (new structure &amp; brand). <a href="https://clayborneo.github.io/cwg-site-draft/" target="_blank">Compare to draft v1 →</a> <a href="https://www.caringwithgrace.com" target="_blank">Current site →</a></div>
+<div class="announce-band"><img src="assets/svg/butterfly.svg" alt="" width="28" height="28"><span>Celebrating 20 years of serving the North Texas area</span></div>
+<div class="header-accent"></div>
+
+<header class="site-header">
+  <a href="index.html" class="site-logo">
+    <img src="assets/img/brand-v6/badge-plum.png" alt="" width="46" height="46" class="site-logo-mark">
+    <img src="assets/img/brand-v6/wordmark-plum.png" alt="Caring with Grace" class="site-logo-word">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <ul class="site-nav">
+    <li><a href="about.html">Our Story</a></li>
+    <li><a href="team.html">Our Team</a></li>
+    <li class="has-dropdown">
+      <button class="nav-drop-btn" aria-haspopup="true">Our Services</button>
+      <ul class="dropdown">
+        <li><a href="care-management-services.html">Care Management Services<small>Guidance through changing health and aging</small></a></li>
+        <li><a href="caring-on-call.html">Care Management for Proactive Planners<small>Planning ahead, before a crisis</small></a></li>
+        <li><a href="thoughtful-engagement.html">Thoughtful Engagement&reg;<small>One-on-one enrichment &amp; companionship</small></a></li>
+      </ul>
+    </li>
+    <li class="has-dropdown">
+      <a href="for-professionals.html" class="nav-drop-btn" aria-haspopup="true">For Professionals</a>
+      <ul class="dropdown dropdown-compact">
+        <li><a href="for-professionals.html">Overview<small>How we partner with your practice</small></a></li>
+        <li><a href="for-professionals.html#financial">Financial &amp; Wealth Advisors</a></li>
+        <li><a href="for-professionals.html#fiduciaries">Trust Officers &amp; Fiduciaries</a></li>
+        <li><a href="for-professionals.html#legal">Legal Professionals</a></li>
+        <li><a href="for-professionals.html#medical">Medical Professionals</a></li>
+        <li><a href="for-professionals.html#homecare">Home Care Agencies</a></li>
+        <li><a href="for-professionals.html#seniorliving">Senior Living Communities</a></li>
+      </ul>
+    </li>
+    <li><a href="aging-life-care.html">Aging Life Care</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="newsletter.html">Newsletter</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+</header>
+
+<main>
+  <section class="unlock" id="unlock">
+    <div class="unlock-card">
+      <img src="assets/img/brand-v6/badge-plum.png" alt="">
+      <h1>Brand guide</h1>
+      <p>For the Caring with Grace team. Enter the password to open the logo files, colors, fonts and guidelines.</p>
+      <form id="unlock-form">
+        <input type="password" id="pw" placeholder="Password" autocomplete="current-password" autofocus>
+        <button type="submit" class="btn btn-primary">Open</button>
+      </form>
+      <div class="err" id="err"></div>
+    </div>
+  </section>
+  <div id="guide"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Caring with Grace</h3>
+      <p>Aging Life Care Professionals serving the Dallas-Fort Worth area. Helping those you love live with dignity since 2006.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/CaringWithGrace" aria-label="Facebook" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/caring-with-grace" aria-label="LinkedIn" target="_blank"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="care-management-services.html">Care Management Services</a></li>
+        <li><a href="for-professionals.html">For Professionals</a></li>
+        <li><a href="caring-on-call.html">Care Management for Proactive Planners</a></li>
+        <li><a href="thoughtful-engagement.html">Thoughtful Engagement&reg;</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="aging-life-care.html">Aging Life Care</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="newsletter.html">Newsletter</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-values">
+    <div class="footer-values-inner">
+      <span class="footer-values-label">Our Values</span>
+      <ul class="footer-values-list">
+        <li>Service</li>
+        <li>Loyalty</li>
+        <li>Confidentiality</li>
+        <li>Cooperation</li>
+        <li>Qualifications</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-area">Proudly serving the DFW Metroplex: Dallas, Fort Worth, Arlington, Plano, Irving, Garland, Grand Prairie, McKinney, Frisco, Carrollton, Richardson, Lewisville, Allen, Flower Mound, North Richland Hills, Mansfield, Euless, DeSoto, Grapevine, Bedford, Cedar Hill, Keller, Southlake, Colleyville, Hurst and nearby communities. <a href="contact.html#service-area">See our full service area</a></div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Caring with Grace, LLC. All rights reserved.</span>
+  </div>
+</footer>
+<script src="assets/js/main.js?v=3"></script>
+<script>
+(function () {
+  var ENC_URL = 'assets/brand/guide.enc';
+  var form = document.getElementById('unlock-form'), pwEl = document.getElementById('pw'), err = document.getElementById('err');
+  var guide = document.getElementById('guide'), unlock = document.getElementById('unlock');
+  async function key(pw, salt) {
+    var km = await crypto.subtle.importKey('raw', new TextEncoder().encode(pw), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: salt, iterations: 310000, hash: 'SHA-256' }, km, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+  }
+  async function open(pw) {
+    var buf = new Uint8Array(await (await fetch(ENC_URL, { cache: 'no-store' })).arrayBuffer());
+    var k = await key(pw, buf.slice(0, 16));
+    var plain = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: buf.slice(16, 28) }, k, buf.slice(28));
+    guide.innerHTML = new TextDecoder().decode(plain);
+    guide.className = 'on'; unlock.className = 'unlock off';
+    try { sessionStorage.setItem('cwg-brand-pw', pw); } catch (e) {}
+    if (location.hash) { var t = document.querySelector(location.hash); if (t) t.scrollIntoView(); }
+  }
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault(); err.textContent = ''; var btn = form.querySelector('button'); btn.disabled = true; btn.textContent = 'Opening…';
+    try { await open(pwEl.value); }
+    catch (ex) { err.textContent = 'That password did not work.'; btn.disabled = false; btn.textContent = 'Open'; pwEl.select(); }
+  });
+  try { var saved = sessionStorage.getItem('cwg-brand-pw'); if (saved) open(saved).catch(function () { sessionStorage.removeItem('cwg-brand-pw'); }); } catch (e) {}
+})();
+</script>
+</body>
+</html>
