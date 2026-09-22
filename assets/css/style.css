@@ -1458,7 +1458,7 @@ a.nav-drop-btn { text-decoration: none; }
 .footer-values-inner { max-width: var(--container-max); margin: 0 auto; text-align: center; }
 .footer-values-label {
   display: block; font-size: 0.76rem; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 16px;
+  color: var(--periwinkle); margin-bottom: 16px; /* Soft Orchid: the one plum tone that reads on navy */
 }
 .footer-values-list {
   list-style: none; margin: 0; padding: 0;
